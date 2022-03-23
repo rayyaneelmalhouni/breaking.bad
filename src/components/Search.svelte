@@ -1,7 +1,12 @@
 <script>
-    let character = "volvo";
+    import { createEventDispatcher } from "svelte";
+    const dispatch = createEventDispatcher();
+    export let names = [];
+    let character = "Walter White";
  function search() {
-     console.log(character)
+    dispatch("character", {
+        name: character
+    })
  }
 </script>
 
@@ -42,10 +47,13 @@
 </style>
 <div class="search-container">
 <select name="cars" id="cars" class="selector" bind:value={character}>
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
+    {#if names}
+    {#each names as name}
+        <option value={name}>{name}</option>
+    {/each}
+    {:else}
+    <option value="Nothing">Awaiting...</option>
+    {/if}
 </select>
 <button class="submit_btn" on:click={search}>Search</button>
 </div>
