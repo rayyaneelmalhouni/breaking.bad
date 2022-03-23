@@ -15,13 +15,13 @@
 	}
 	.title {
 		color: #A9A9A9;
-		font-size: 3em;
+		font-size: 2em;
 		margin-top: 20px;
 	}
 	.sub-title {
 		color: 	#0000CD;
 		letter-spacing: .4em;
-		font-size: 1.3em;
+		font-size: .9em;
 	}
 </style>
 <h1 class="title">Breaking Bad</h1>

@@ -1,4 +1,9 @@
-
+<script>
+    let character = "volvo";
+ function search() {
+     console.log(character)
+ }
+</script>
 
 <style>
     .search-container {
@@ -36,11 +41,11 @@
     }
 </style>
 <div class="search-container">
-<select name="cars" id="cars" class="selector">
+<select name="cars" id="cars" class="selector" bind:value={character}>
     <option value="volvo">Volvo</option>
     <option value="saab">Saab</option>
     <option value="mercedes">Mercedes</option>
     <option value="audi">Audi</option>
 </select>
-<button class="submit_btn">Search</button>
+<button class="submit_btn" on:click={search}>Search</button>
 </div>
