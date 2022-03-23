@@ -9,7 +9,22 @@
 	})
 
 </script>
-<h1>Breaking Bad</h1>
-<h2>Characters</h2>
+<style>
+	h1, h2 {
+		text-align: center;
+	}
+	.title {
+		color: #A9A9A9;
+		font-size: 3em;
+		margin-top: 20px;
+	}
+	.sub-title {
+		color: 	#0000CD;
+		letter-spacing: .4em;
+		font-size: 1.3em;
+	}
+</style>
+<h1 class="title">Breaking Bad</h1>
+<h2 class="sub-title">Characters</h2>
 <Search />
 <Character />
