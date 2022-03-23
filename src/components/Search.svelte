@@ -18,6 +18,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
     .selector {
         padding: 10px 20px;
@@ -43,6 +44,21 @@
     .submit_btn:hover {
         background-color: #1919f8;
         color: white;
+    }
+    @media only screen and (max-width: 600px) {
+        .search-container {
+            padding: 10px;
+        }
+        .selector {
+            padding: 5px 10px;
+            border-radius: 10px;
+            width: 150px;
+        }
+        .submit_btn {
+            padding: 5px 10px;
+            margin-left: 10px;
+            display: block;
+        }
     }
 </style>
 <div class="search-container">

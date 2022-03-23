@@ -7,6 +7,7 @@
 	onMount(async () => {
 		const response = await fetch("https://breakingbadapi.com/api/characters")
 		data = await response.json();
+		console.log(data)
 		getNames();
 	})
 	function getNames() {
@@ -24,13 +25,22 @@
 	}
 	.title {
 		color: #A9A9A9;
-		font-size: 2em;
+		
 		margin-top: 20px;
 	}
 	.sub-title {
 		color: 	#0000CD;
 		letter-spacing: .4em;
 		font-size: .9em;
+	}
+	@media only screen and (max-width: 600px) {
+		.title {
+			font-size: 1.3em;
+		}
+		.sub-title {
+			font-size: .7;
+			letter-spacing: .2em;
+		}
 	}
 </style>
 <h1 class="title">Breaking Bad</h1>
