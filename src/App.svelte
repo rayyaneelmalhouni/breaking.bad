@@ -9,6 +9,7 @@
 		const response = await fetch("https://breakingbadapi.com/api/characters")
 		data = await response.json();
 		getNames();
+		
 	})
 	function getNames() {
 		for (let i = 0; i< data.length; i++) {
