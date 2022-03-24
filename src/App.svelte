@@ -4,11 +4,10 @@
 	import Search from "./components/Search.svelte";
 	let data  = [];
 	let names = [];
-	let person = {};
+	let person;
 	onMount(async () => {
 		const response = await fetch("https://breakingbadapi.com/api/characters")
 		data = await response.json();
-		console.log(data)
 		getNames();
 	})
 	function getNames() {
@@ -18,7 +17,6 @@
 	}
     function showCharacter(e) {
 		person = data[names.indexOf(e.detail.name)]
-		console.log(person)
 	}
 </script>
 <style>
@@ -48,6 +46,6 @@
 <h1 class="title">Breaking Bad</h1>
 <h2 class="sub-title">Characters</h2>
 <Search {names} on:character={showCharacter}/>
-{#if data }
+{#if person}
 <Character {person}/> 
 {/if}

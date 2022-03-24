@@ -1,11 +1,11 @@
 <script>
-    let person = {char_id: 1, name: 'Walter White', birthday: '09-07-1958', occupation: ["Server", "Good Man"], img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg", nickname: "Rayyanes", status: "Dead"}
-    let name = person.name;
-    let birthday = person.birthday;
-    let occupations = person.occupation;
-    let img = person.img;
-    let nickname = person.nickname;
-    let status = person.status;
+    export let person = {}
+    $: name = person.name;
+    $: birthday = person.birthday;
+    $: occupations = person.occupation;
+    $: img = person.img;
+    $: nickname = person.nickname;
+    $: status = person.status;
 
 </script>
 
