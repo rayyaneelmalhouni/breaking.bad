@@ -3,7 +3,8 @@
 	import Character from "./components/Character.svelte";
 	import Search from "./components/Search.svelte";
 	let data  = [];
-	let names = []
+	let names = [];
+	let person = {};
 	onMount(async () => {
 		const response = await fetch("https://breakingbadapi.com/api/characters")
 		data = await response.json();
@@ -16,7 +17,8 @@
 		}
 	}
     function showCharacter(e) {
-		console.log(e.detail.name)
+		person = data[names.indexOf(e.detail.name)]
+		console.log(person)
 	}
 </script>
 <style>
@@ -46,4 +48,6 @@
 <h1 class="title">Breaking Bad</h1>
 <h2 class="sub-title">Characters</h2>
 <Search {names} on:character={showCharacter}/>
-<Character />
+{#if data }
+<Character {person}/> 
+{/if}
